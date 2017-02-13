@@ -1,0 +1,51 @@
+---
+title: "Homework_3"
+author: "邱靖惠"
+date: "2017年2月13日"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+#**期中作業題目**
+    - 使用 ggplot2 與任意資料繪製散佈圖，線圖，直方圖，盒鬚圖與長條圖 
+    - 將程式上傳至 GitHub
+
+
+##**散佈圖**
+```{r}
+library(ggplot2)
+ggplot(trees,aes(x=Girth,y=Height))+ 
+  geom_point()+
+  ggtitle(" Girth vs.Height of Trees") +
+  xlab('Girth')+
+  ylab("Height")
+```
+
+##**線圖**
+```{r}
+ggplot(pressure,aes(x=temperature,y=pressure))+
+  geom_point()+
+  geom_line()+
+  ggtitle("Vapor Pressure of Mercury as a Function of Temperature")
+```
+
+##**直方圖**
+```{r}
+ggplot(iris, aes(x =Petal.Length)) +
+  geom_histogram(bins = 30)
+```
+
+##**盒鬚圖**
+```{r}
+ggplot(mpg, aes(x =manufacturer, y = hwy)) +
+  geom_boxplot()
+```
+
+##**長條圖**
+```{r}
+ggplot(iris, aes(x = Petal.Width)) +
+  geom_bar(aes(fill = Species), position = "fill") +
+  ylab("Percentage")
+```
